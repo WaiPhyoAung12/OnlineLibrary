@@ -1,0 +1,156 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="myProject.WebPage.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>My Websitw With Bootstrap
+    </title>
+
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/627302b2f5.js" crossorigin="anonymous"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        footer {
+            background-color: darkred;
+        }
+
+        .MainFooter {
+            width: 100%;
+        }
+
+        @media(max-width:575.98px) {
+            li:hover {
+                background-color: aqua;
+            }
+
+            .mainHover {
+                padding-top: 10px;
+            }
+        }
+
+        @media(max-width:990px) {
+            li:hover {
+                background-color: aqua;
+            }
+
+            .nav-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mainHover {
+                width: 100%;
+                padding-top: 10px;
+            }
+        }
+        .Administrator{
+            text-decoration:none;
+            margin-left:5px;
+            color:lightgray;
+        }
+        .Administrator:hover{
+            color:white;
+        }
+        .AdminLogin {
+            background-color: orangered;
+            
+        }
+        .navbar{
+            background-color:lightsteelblue;
+        }
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-flex text-info" href="#">
+                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/man city.png" Width="30px" CssClass="p-1" />
+                        Club
+
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse mainHover" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <asp:LinkButton ID="Home" runat="server" class="nav-link active fw-bold" aria-current="page" OnClick="Home_Click">Home</asp:LinkButton>
+
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="AboutUs" class="nav-link fw-bold" runat="server">About Us</asp:LinkButton>
+
+                            </li>
+                            <li class="nav-item dropdown">
+                                <asp:LinkButton ID="Terms" class="nav-link fw-bold" runat="server">Terms</asp:LinkButton>
+
+
+                            </li>
+                        </ul>
+
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <asp:LinkButton ID="ViewBook" class="nav-link active fw-bold" runat="server" OnClick="ViewBook_Click">View Book</asp:LinkButton>
+
+
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="Logout" class="nav-link active fw-bold" runat="server" OnClick="Logout_Click">Logout</asp:LinkButton>
+
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="UserLogin" class="nav-link active fw-bold" runat="server" OnClick="UserLogin_Click">UserLogin</asp:LinkButton>
+                                
+
+                            </li>
+                           <li class="nav-item">
+                               <asp:LinkButton ID="HelloUser" CssClass="nav-link active fw-bold" runat="server" OnClick="HelloUser_Click"></asp:LinkButton>
+                           </li>
+                            
+                            <li class="nav-item">
+                                
+
+                                <asp:LinkButton ID="SignUp" class="nav-link active fw-bold" runat="server" OnClick="SignUp_Click">Sign Up</asp:LinkButton>
+
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="container-fluid AdminLogin d-flex justify-content-center text-white py-2" id="AdminCom" runat="server">
+            <asp:LinkButton ID="AdminLogin" CssClass="Administrator" runat="server" OnClick="AdminLogin_Click">AdminLogin</asp:LinkButton>
+            <asp:LinkButton ID="AuthorManagement" CssClass="Administrator" runat="server" OnClick="AuthorManagement_Click">AuthorManagement</asp:LinkButton>
+            <asp:LinkButton ID="PublisherManagement" CssClass="Administrator" runat="server" OnClick="PublisherManagement_Click">PublisherManagement</asp:LinkButton>
+            <asp:LinkButton ID="BookInventory" CssClass="Administrator" runat="server" OnClick="BookInventory_Click">BookInventory</asp:LinkButton>
+            <asp:LinkButton ID="BookIssuing" CssClass="Administrator" runat="server" OnClick="BookIssuing_Click">BookIssuing</asp:LinkButton>
+            <asp:LinkButton ID="MemberManagement" CssClass="Administrator" runat="server" OnClick="MemberManagement_Click">MemberManagement</asp:LinkButton>
+        </div>
+    </form>
+    <footer>
+        <div class="container-fluid MainFooter d-flex justify-content-center text-white py-3">&copy All Right Reserved</div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
